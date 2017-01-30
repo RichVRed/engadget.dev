@@ -13,6 +13,23 @@ All security vulnerabilities will be promptly addressed.
 ### Deployed Using:
 * [Laradock](https://github.com/laradock/laradock.git)
 
+Bring up Docker containers
+```bash
+docker-compose up -d nginx php-fpm mysql mongo memcached workspace
+```
+Enter workspace container
+```bash
+docker-compose exec workspace bash
+```
+Install Composer
+```bash
+composer install
+```
+Install npm
+```bash
+npm install
+```
+
 ##
 ## REST API for Blog Application
 
