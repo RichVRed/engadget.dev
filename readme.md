@@ -10,6 +10,9 @@ All security vulnerabilities will be promptly addressed.
 * The Laravel framework is licensed under the [MIT license](http://opensource.org/licenses/MIT).
 * The Engadget blog is licensed under the [CC BY-NC-ND 4.0 license](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
+### Deployed Using:
+* [Laradock](https://github.com/laradock/laradock.git)
+
 ##
 ## REST API for Blog Application
 
