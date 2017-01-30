@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    {!! Form::open(['url' => url('/user/register'), 'method' => 'post', 'role' => 'form', 'class' => 'form-horizontal']) !!}
+                    {!! Form::open(['url' => '/user/register', 'method' => 'post', 'role' => 'form', 'class' => 'form-horizontal']) !!}
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>

@@ -10,7 +10,6 @@
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="content-type" content="text/html" />
 
-
     <title>{{ config('app.name', env('APP_NAME')) }} | Technology News, Advice and Features</title>
     <meta name="description" content="Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics">
     <link rel="canonical" href="{{ config('app.url', env('APP_URL')) }}">
@@ -54,8 +53,6 @@
     <!-- IE 11 Tile -->
     <meta name="msapplication-tooltip" content="Engadget">
     <meta name="msapplication-config" content="{{ url('/assets/xml/ieconfig.xml') }}">
-    meta($name, $content, array $attributes = [])
-    {{ Html::meta('', '') }}
     {{ Html::meta('msapplication-TileColor', '#2B2D32') }}
     {{ Html::meta('msapplication-TileImage', url('images/eng-e-558.png')) }}
     {{ Html::meta('msapplication-square70x70logo', url('images/eng-e-128.png')) }}
@@ -66,23 +63,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- RSS -->
-    {{ Html::link() }}
     <link rel="alternate" type="application/rss+xml" title="Engadget" href="{{ url('/rss.xml') }}"/>
-    <!-- 1 - Apple | 2 - iOS 2.0+ Android 2.1+ (precomposed) -->
-    {{ $sizes = [57, 60, 72, 76, 114, 120, 144, 152] }}
-    @foreach ($sizes as $sizes)
-    {{ Html::link("images/apple-touch-icon-{$size}x{$size}.png", '', ['sizes' => "{$size}x{$size}", 'rel' => 'apple-touch-icon'] ) }}
-    {{ Html::link("images/apple-touch-icon-{$size}x{$size}.png", '', ['sizes' => "{$size}x{$size}", 'rel' => 'apple-touch-icon-precomposed'] ) }}
-    @endforeach
-    <!-- Favicon -->
-    {{ $sizes = [16, 32, 96, 160] }}
-    @foreach ($sizes as $sizes)
-    {{ Html::favicon("images/favicon-{$size}x{$size}.png", ['type' => 'image/png', 'sizes' => "{$size}x{$size}", 'rel' => 'icon'] ) }}
-    {{ Html::favicon("images/favicon-{$size}x{$size}.png", ['type' => 'image/png', 'sizes' => "{$size}x{$size}"] ) }}
-    @endforeach
     {{ Html::favicon('images/favicon-128.png',     ['type' => 'image/png', 'sizes' => '128x128', 'rel' => 'icon'] ) }}
     {{ Html::favicon('images/favicon-196x196.png', ['type' => 'image/png', 'sizes' => '196x196', 'rel' => 'icon'] ) }}
-
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -99,7 +82,6 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -107,19 +89,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', env('APP_NAME')) }}
                     </a>
                 </div>
-
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
+                    <ul class="nav navbar-nav">&nbsp;</ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -131,7 +108,6 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/user/logout') }}"
@@ -139,7 +115,6 @@
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
-
                                         <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
@@ -151,10 +126,8 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
     </div>
-
     <!-- Scripts -->
     <script src="/js/app.js"></script>
 </body>
