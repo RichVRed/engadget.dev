@@ -15,6 +15,7 @@
         "arcanedev/no-captcha": "^3.2",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "laravelcollective/html": "5.4.*",
         "php": ">=5.6.4",
         "webpatser/laravel-countries": "1.5.*"
     },

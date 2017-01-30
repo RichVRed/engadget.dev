@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
+
+Route::get( '/user/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('/user/register', 'Auth\RegisterController@postUserRegister');
+
+Route::get( '/user/login',  'Auth\LoginController@showLoginForm');
+Route::post('/user/login',  'Auth\LoginController@login');
+Route::post('/user/logout', 'Auth\LoginController@logout');
+
+Route::get( '/user/forgot', 'Auth\ResetPasswordController@showResetForm');
+Route::post('/user/forgot', 'Auth\ResetPasswordController@reset');
+
+Route::get( '/password/email', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');

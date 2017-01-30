@@ -36,4 +36,24 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    public function getUserForgotPasswordReset()
+    {
+        return view('auth.passwords.reset');
+    }
+
+    public function postUserForgotPasswordReset(Request $request)
+    {
+        $rules    = [
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return redirect('user/forgot')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        return view('home');
+    }
 }
