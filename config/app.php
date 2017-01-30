@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         Webpatser\Countries\CountriesServiceProvider::class,
 
@@ -200,6 +201,7 @@ return [
         'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
+        'Captcha' => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Countries' => Webpatser\Countries\CountriesFacade::class,
