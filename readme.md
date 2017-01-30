@@ -10,9 +10,16 @@ All security vulnerabilities will be promptly addressed.
 * The Laravel framework is licensed under the [MIT license](http://opensource.org/licenses/MIT).
 * The Engadget blog is licensed under the [CC BY-NC-ND 4.0 license](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
-### Deployed Using:
-* [Laradock](https://github.com/laradock/laradock.git)
+### Deployment Process:
 
+Download [Laradock](https://github.com/laradock/laradock.git)
+```bash
+git clone https://github.com/laradock/laradock.git
+```
+Navigate into cloned project and configure
+```bash
+cd laradock
+```
 Bring up Docker containers
 ```bash
 docker-compose up -d nginx php-fpm mysql mongo memcached workspace
@@ -28,6 +35,14 @@ composer install
 Install npm
 ```bash
 npm install
+```
+Mix npm
+```bash
+npm run dev
+```
+Publish vendor
+```bash
+php artisan vendor:publish
 ```
 
 ##
