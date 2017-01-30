@@ -6,4 +6,7 @@
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Flags
+@import "../../../node_modules/flag-icon-css/sass/flag-icon";
