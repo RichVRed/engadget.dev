@@ -54,22 +54,19 @@
     <meta name="msapplication-tooltip" content="Engadget">
     <meta name="msapplication-config" content="{{ url('/assets/xml/ieconfig.xml') }}">
     {{ Html::meta('msapplication-TileColor', '#2B2D32') }}
-    {{ Html::meta('msapplication-TileImage', url('images/eng-e-558.png')) }}
-    {{ Html::meta('msapplication-square70x70logo', url('images/eng-e-128.png')) }}
-    {{ Html::meta('msapplication-square150x150logo', url('images/eng-e-270.png')) }}
-    {{ Html::meta('msapplication-wide310x150logo', url('images/eng-e-558x270.png')) }}
-    {{ Html::meta('msapplication-square310x310logo', url('images/eng-e-558.png')) }}
-    {{ Html::meta('msapplication-notification', "frequency=30;polling-uri=https://notifications.buildmypinnedsite.com/?feed=https://www.engadget.com/rss.xml&amp;id=1;polling-uri2=https://notifications.buildmypinnedsite.com/?feed=https://www.engadget.com/rss.xml&amp;id=2;polling-uri3=https://notifications.buildmypinnedsite.com/?feed=https://www.engadget.com/rss.xml&amp;id=3;polling-uri4=https://notifications.buildmypinnedsite.com/?feed=https://www.engadget.com/rss.xml&amp;id=4;polling-uri5=https://notifications.buildmypinnedsite.com/?feed=https://www.engadget.com/rss.xml&amp;id=5; cycle=1") }}
+    {{ Html::meta('msapplication-TileImage', url('images/favicon/mstile-144x144.png')) }}
+    {{ Html::meta('msapplication-square70x70logo', url('images/favicon/mstile-70x70.png')) }}
+    {{ Html::meta('msapplication-square150x150logo', url('images/favicon/mstile-150x150.png')) }}
+    {{ Html::meta('msapplication-wide310x150logo', url('images/favicon/mstile-310x150.png')) }}
+    {{ Html::meta('msapplication-square310x310logo', url('images/favicon/mstile-310x310.png')) }}
+    {{ Html::meta('msapplication-notification', "frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=engadget.dev/rss.xml&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=engadget.dev/rss.xml&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=engadget.dev/rss.xml&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=engadget.dev/rss.xml&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=engadget.dev/rss.xml&amp;id=5;cycle=1") }}
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="Engadget" href="{{ url('/rss.xml') }}"/>
-    {{ Html::favicon('images/favicon-128.png',     ['type' => 'image/png', 'sizes' => '128x128', 'rel' => 'icon'] ) }}
-    {{ Html::favicon('images/favicon-196x196.png', ['type' => 'image/png', 'sizes' => '196x196', 'rel' => 'icon'] ) }}
-
+    @include('layouts.partials.favicons')
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -79,53 +76,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', env('APP_NAME')) }}
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">&nbsp;</ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ url('/user/login') }}">Login</a></li>
-                            <li><a href="{{ url('/user/register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/user/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-                                        <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @include('layouts.partials.navigation')
         @yield('content')
     </div>
     <!-- Scripts -->

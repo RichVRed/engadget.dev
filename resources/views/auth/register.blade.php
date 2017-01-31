@@ -54,7 +54,7 @@
                                 <button type="submit" class="btn btn-primary">Register</button>
                             </div>
                         </div>
-                    {!!  Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
