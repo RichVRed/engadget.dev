@@ -21,11 +21,13 @@ Route::get( '/user/login',  'Auth\LoginController@showLoginForm');
 Route::post('/user/login',  'Auth\LoginController@login');
 Route::post('/user/logout', 'Auth\LoginController@logout');
 
-Route::get( '/user/forgot', 'Auth\ResetPasswordController@showResetForm');
-Route::post('/user/forgot', 'Auth\ResetPasswordController@reset');
+Route::get( '/user/forgot', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('/user/forgot', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 
-Route::get( '/password/email', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+Route::get( '/user/reset-pass', 'Auth\ResetPasswordController@showResetForm');
+Route::post('/user/reset-pass', 'Auth\ResetPasswordController@reset');
+
+auth/engadget_auth/sendPasswordReset
 
 Auth::routes();
 Route::resource('admin/users', 'Admin\UsersController');

@@ -30,8 +30,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <button class="btn btn-primary" type="submit">Login</button>or
-                            @include('layouts.partials.oauth')
+                            <button class="btn btn-primary" type="submit">Login</button> or @include('layouts.partials.oauth')
                         </div>
                     </div>
                     {!! Form::close() !!}

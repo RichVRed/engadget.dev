@@ -54,6 +54,6 @@ class ResetPasswordController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        return view('home');
+        return $this->reset($request);
     }
 }
