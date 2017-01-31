@@ -1,4 +1,7 @@
 node_modules/
+public/
+public/js/
+public/css/
 public/storage/
 storage/*.key
 vendor/
@@ -7,3 +10,4 @@ Homestead.json
 Homestead.yaml
 .env
 npm-debug.log
+composer.phar
