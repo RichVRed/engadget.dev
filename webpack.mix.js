@@ -11,8 +11,15 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix
+    .js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .copy('node_modules/font-awesome/fonts', 'public/fonts')
     .copy('node_modules/flag-icon-css/flags/1x1', 'public/images/flags/1x1')
-    .copy('node_modules/flag-icon-css/flags/4x3', 'public/images/flags/4x3');
+    .copy('node_modules/flag-icon-css/flags/4x3', 'public/images/flags/4x3')
+    .version();
+
+/*
+ | Uncomment for production server:
+ | mix.disableNotifications();
+ */
