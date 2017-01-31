@@ -26,3 +26,7 @@ Route::post('/user/forgot', 'Auth\ResetPasswordController@reset');
 
 Route::get( '/password/email', 'Auth\ForgotPasswordController@showLinkRequestForm');
 Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+
+Auth::routes();
+Route::resource('admin/users', 'Admin\UsersController');
+Auth::routes();
